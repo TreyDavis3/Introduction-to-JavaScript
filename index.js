@@ -60,8 +60,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a * b;
 }
 
 
@@ -76,8 +76,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7; 
 }
 
 
@@ -109,8 +109,24 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1 && weight <= 5){
+    return weight * 0.05;
+  }else if (age >= 1 && weight >= 6 && weight <= 10){
+    return weight * 0.04;
+  }else if (age >= 1 && weight >= 11 && weight <= 15){
+    return weight * 0.03;
+  }else if (age >= 1 && weight > 15){
+    return weight * 0.02;
+  }else if (age < 1 && age >= 0.583){
+    return weight * 0.04;
+  }else if (age < 0.583 && age >= 0.333){
+    return weight * 0.05;
+  }else if (age < 0.333){
+    return weight * 0.1;
+  } else {
+    return "Something";
+  }
 }
 
 
@@ -137,7 +153,24 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 */
 
 function game(user, computer){
-  /*add your code here*/
+  let scissors = 'scissors'
+  let paper = 'paper'
+  let rock = 'rock'
+  if (user === scissors && computer === paper){
+    return 'you win!';
+  }else if (user === paper && computer === rock){
+    return 'you win!';
+  }else if (user === rock && computer === scissors){
+    return 'you win!';
+  }else if (user === paper && computer === scissors){
+    return 'you lose!';
+  }else if (user === rock && computer === paper){
+    return 'you lose!';
+  }else if (user === scissors && computer === rock){
+    return 'you lose!';
+  }else {
+    return "it's a tie";
+  }
 }
 
 
@@ -153,8 +186,9 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilometers){
+  let miles = kilometers * .621371
+  return miles;
 }
 
 
@@ -167,8 +201,9 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  var feet = cm / 30.48
+  return feet;
 }
 
 
@@ -183,8 +218,15 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+  let lyrics = ""; 
+  let i = num
+  lyrics = lyrics + `${i}` + " bottles of soda on the wall, " + `${i}` + " bottles of soda, take one down pass it around " + `${i-1}` + " bottles of soda on the wall"
+   
+  // for (let i = num; i > 0; i--){
+  //   lyrics = lyrics + `${i}` + " bottles of soda on the wall, " + `${i}` + " bottles of soda, take one down pass it around " + `${i-1}` + " bottles of soda on the wall.  "
+  // }
+  return lyrics;
 }
 
 
@@ -203,8 +245,18 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if (score >= 90 && score <= 100){
+    return "you got an A";
+  }else if (score >= 80 && score <=89){
+    return "you got a B";
+  }else if (score >= 70 && score <= 79){
+    return "you got a C";
+  }else if (score >= 60 && score <=69){
+    return "you got a D";
+  }else if (score < 60){
+    return "you got an F";
+  }
 }
 
 
